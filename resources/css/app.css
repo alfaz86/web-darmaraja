@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-justify-content {
+        @apply text-justify;
+    }
+}
+
+.text-justify-content {
+    text-align: justify;
+    text-justify: inter-word;
+}
