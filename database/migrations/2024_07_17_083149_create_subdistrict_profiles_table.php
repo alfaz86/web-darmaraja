@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('thumbnail_image');
-            $table->enum('menu', [SubdistrictProfile::MENU])->default('sejarah');
+            $table->enum('menu', [SubdistrictProfile::getMenuKeys()])->default('sejarah');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
