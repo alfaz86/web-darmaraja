@@ -23,7 +23,11 @@
         </ul>
         <div class="row">
             <div class="lg:col-6 lg:order-2">
-                <img class="w-full mx-auto md:mt-40 rounded-lg shadow-lg" src="{{asset('images/alun-alun-darmaraja.jpg')}}" width="412" height="483" alt="" />
+                @if($data)
+                    <img class="w-full mx-auto md:mt-40 rounded-lg shadow-lg" src="{{ $data->thumbnailImage->getUrl() }}" alt="{{ $data->thumbnailImage->file_name }}" />
+                @else
+                    <img class="w-full mx-auto md:mt-40 rounded-lg shadow-lg" src="{{asset('pinwheel/images/career/career-hero-img-1.png')}}" width="412" height="483" alt="" />
+                @endif
             </div>
             <div class="mt-10 lg:col-6 lg:order-1 lg:mt-0">
                 <ul class="breadcrumb mb-8 hidden h-8 items-center justify-center space-x-2 rounded-3xl bg-theme-light px-4 py-2 lg:inline-flex">
@@ -43,14 +47,10 @@
                     </li>
                 </ul>
                 <h1 class="text-left">
-                    Sejarah
+                    {{ $data['title'] ?? 'Title' }}
                 </h1>
                 <div class="content text-justify-content">
-                    <p class="mt-6">
-                        Donec sollicitudin molestie malesda. Donec sollitudin molestie
-                        malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies
-                        ligula sed magna dictum porta. Lorem
-                    </p>
+                    {!! $data['content'] ?? 'Lorem ipsum dolor sit amet.' !!}
                 </div>
             </div>
         </div>

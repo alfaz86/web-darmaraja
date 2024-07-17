@@ -23,7 +23,11 @@
         </ul>
         <div class="row">
             <div class="lg:col-6 lg:order-2">
-                <img class="w-full mx-auto md:mt-40 object-cover" src="{{asset('pinwheel/images/about/gallery-img-2.png')}}" width="412" height="483" alt="" />
+                @if($data)
+                    <img class="w-full mx-auto md:mt-40 rounded-lg shadow-lg" src="{{ $data->thumbnailImage->getUrl() }}" alt="{{ $data->thumbnailImage->file_name }}" />
+                @else
+                    <img class="w-full mx-auto md:mt-40 rounded-lg shadow-lg" src="{{asset('pinwheel/images/career/career-hero-img-1.png')}}" width="412" height="483" alt="" />
+                @endif
             </div>
             <div class="mt-10 lg:col-6 lg:order-1 lg:mt-0">
                 <ul class="breadcrumb mb-8 hidden h-8 items-center justify-center space-x-2 rounded-3xl bg-theme-light px-4 py-2 lg:inline-flex">
@@ -43,26 +47,10 @@
                     </li>
                 </ul>
                 <h1 class="text-left">
-                    Tugas Pokok dan Fungsi (Tupoksi)
+                    {{ $data['title'] ?? 'Title' }}
                 </h1>
                 <div class="content text-justify-content">
-                    <p class="mt-6">
-                        Tugas: Kecamatan mempunyai tugas yang dilimpahkan oleh Bupati untuk melaksanakan sebagian Urusan Pemerintahan yang menjadi kewenangan Daerah.
-                    </p>
-                    <p class="mt-6">
-                        Fungsi: Dalam menyelenggarakan tugas pokok di atas, Kecamatan menyelenggarakan fungsi sebagai berikut:
-                    </p>
-                    <ul class="list-disc mt-6 ml-8">
-                        <li>Penyelenggaraan Urusan Pemerintahan Umum;</li>
-                        <li>Pengkoordinasian kegiatan pemberdayaan masyarakat;</li>
-                        <li>Pengkoordinasian upaya penyelenggaraan ketentraman dan ketertiban umum;</li>
-                        <li>Pengkoordinasian penerapan dan penegakan Peraturan Daerah dan Peraturan Bupati;</li>
-                        <li>Pengkoordinasian pemeliharaan sarana dan prasarana pelayanan umum;</li>
-                        <li>Pengkoordinasian penyelenggaraan kegiatan pemerintahan yang dilakukan perangkat daerah di tingkat kecamatan;</li>
-                        <li>Pembinaan dan pengawasan penyelenggaraan kegiatan desa dan atau kelurahan;</li>
-                        <li>Pelaksanaan urusan pemerintahan yang menjadi kewenangan Daerah yang tidak dilaksanakan oleh unit kerja pemerintahan daerah yang ada di kecamatan; dan</li>
-                        <li>Pelaksanaan tugas lain yang diperintahkan oleh peraturan perundang-undangan.</li>
-                    </ul>
+                    {!! $data['content'] ?? 'Lorem ipsum dolor sit amet.' !!}
                 </div>
             </div>
         </div>

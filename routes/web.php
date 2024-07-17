@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,31 +18,21 @@ Route::get('/', function () {
     return view('homepage.index');
 })->name('homepage.index');
 
-Route::get('/login', function () {
-    return view('homepage.login');
-})->name('homepage.login');
+// Route::get('/login', function () {
+//     return view('homepage.login');
+// })->name('homepage.login');
 
 // group profil-kecamatan
 Route::group(['prefix' => 'profil-kecamatan'], function () {
-    Route::get('/sejarah', function () {
-        return view('homepage.profil-kecamatan.sejarah');
-    })->name('profil-kecamatan.sejarah');
+    Route::get('/sejarah', [HomePageController::class, 'sejarah'])->name('profil-kecamatan.sejarah');
 
-    Route::get('/luas-wilayah', function () {
-        return view('homepage.profil-kecamatan.luas-wilayah');
-    })->name('profil-kecamatan.luas-wilayah');
+    Route::get('/luas-wilayah', [HomePageController::class, 'luasWilayah'])->name('profil-kecamatan.luas-wilayah');
 
-    Route::get('/struktur-organisasi', function () {
-        return view('homepage.profil-kecamatan.struktur-organisasi');
-    })->name('profil-kecamatan.struktur-organisasi');
+    Route::get('/struktur-organisasi', [HomePageController::class, 'strukturOrganisasi'])->name('profil-kecamatan.struktur-organisasi');
 
-    Route::get('/tupoksi', function () {
-        return view('homepage.profil-kecamatan.tupoksi');
-    })->name('profil-kecamatan.tupoksi');
+    Route::get('/tupoksi', [HomePageController::class, 'tupoksi'])->name('profil-kecamatan.tupoksi');
 
-    Route::get('/visi-misi', function () {
-        return view('homepage.profil-kecamatan.visi-misi');
-    })->name('profil-kecamatan.visi-misi');
+    Route::get('/visi-misi', [HomePageController::class, 'visimisi'])->name('profil-kecamatan.visi-misi');
 });
 
 // group layanan-publik

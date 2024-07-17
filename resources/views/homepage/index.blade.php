@@ -15,7 +15,7 @@
                 </p>
             </div>
             <div class="lg:col-6">
-                <img class="w-full object-contain rounded-lg shadow-lg" src="images/alun-alun-darmaraja.jpg" width="603" height="396" alt="" />
+                <img class="w-full object-contain rounded-lg shadow-lg" src="images/homepage-background.jpeg" width="603" height="396" alt="" />
             </div>
         </div>
     </div>
