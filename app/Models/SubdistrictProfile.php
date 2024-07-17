@@ -33,6 +33,16 @@ class SubdistrictProfile extends Model implements HasMedia
         1 => 'Aktif',
     ];
 
+    public static function getMenuKeys()
+    {
+        return array_keys(self::MENU);
+    }
+
+    public static function getStatusKeys()
+    {
+        return array_keys(self::STATUS);
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('thumbnail_image')
