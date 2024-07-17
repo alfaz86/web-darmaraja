@@ -86,11 +86,23 @@
                 <a href="#" class="nav-link">Agenda</a>
             </li>
             <li class="nav-item mt-3.5 lg:hidden btn-login">
-                <a class="btn btn-white btn-sm border-border" href="/login">Login</a>
+                <a class="btn btn-white btn-sm border-border" href="{{ backpack_url('/login') }}">
+                    @if (backpack_user())
+                        Dashboard
+                    @else
+                        Login
+                    @endif
+                </a>
             </li>
         </ul>
         <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex btn-login">
-            <a class="btn btn-white btn-sm" href="/login">Login</a>
+            <a class="btn btn-white btn-sm" href="{{ backpack_url('/login') }}">
+                @if (backpack_user())
+                        Dashboard
+                    @else
+                        Login
+                    @endif
+                </a>
         </div>
     </nav>
 </header>
