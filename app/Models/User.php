@@ -52,4 +52,9 @@ class User extends Authenticatable
         self::ADMIN => 'Administrator',
         self::USER => 'User',
     ];
+
+    public static function getRoleKeys()
+    {
+        return array_keys(self::ROLE);
+    }
 }
