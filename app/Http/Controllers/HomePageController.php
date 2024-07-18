@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\SubdistrictProfile;
+use App\Models\SuperiorCommodity;
+use App\Models\Tour;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class HomePageController extends Controller
 {
@@ -53,4 +56,28 @@ class HomePageController extends Controller
             ->first();
         return view('homepage.profil-kecamatan.visi-misi', compact('data'));
     }
+
+    public function wisata(Request $request)
+    {
+        $data = Tour::all();
+        return view('homepage.potensi-dan-wisata.wisata', compact('data'));
+    }
+
+    public function komoditasUnggulan(Request $request)
+    {
+        $superiorCommodity = SuperiorCommodity::all()->groupBy('location');
+        $page = $request->get('page') ?? 1;
+        $perPage = 10;
+        $total = $superiorCommodity->count();
+        $data = new LengthAwarePaginator(
+            $superiorCommodity->forPage($page, $perPage),
+            $total,
+            $perPage,
+            $page,
+            ['path' => $request->url()]
+        );
+
+        return view('homepage.potensi-dan-wisata.komoditas-unggulan', compact('data'));
+    }
+
 }

@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li class="leading-none text-dark">
-                    <span class="text-sm leading-none">/ Blog</span>
+                    <span class="text-sm leading-none">/ Wisata</span>
                 </li>
             </ul>
         </div>
@@ -28,82 +28,31 @@
         </div>
     </div>
 
-    <div style="margin-top: 100px"></div>
-
-    <section class="section pt-0">
+    <section class="section pt-3">
         <div class="container">
-            <div class="category-filter mb-10 mt-3 rounded-xl bg-[#EEEEEE] px-4">
-                <ul class="filter-list">
-                    <li>
-                        <a class="filter-btn filter-btn-active btn btn-sm" href="#">All Categories</a>
-                    </li>
-                    <li>
-                        <a class="filter-btn btn btn-sm" href="#">Development</a>
-                    </li>
-                    <li>
-                        <a class="filter-btn btn btn-sm" href="#">Updates</a>
-                    </li>
-                    <li>
-                        <a class="filter-btn btn btn-sm" href="#">Email Marketing</a>
-                    </li>
-                    <li>
-                        <a class="filter-btn btn btn-sm" href="#">Rate Optimization</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="featured-posts row">
-                <div class="mb-8 md:col-6">
+            <div class="row">
+                @foreach ($data as $item)
+                <div class="mb-8 md:col-6 lg:col-4">
                     <div class="card">
-                        <img class="card-img" width="235" height="304" src="{{asset('images/kampung-buricak-burinong-pakualam.png')}}" alt="" />
+                        @if($item)
+                        <img class="card-img" style="object-fit: cover;" src="{{ $item->tourImage->getUrl() }}" alt="{{ $item->tourImage->file_name }}" />
+                        @else
+                        <img class="card-img" width="235" height="304" src="{{asset('pinwheel/images/posts/post-3.png')}}" alt="" />
+                        @endif
                         <div class="card-content">
-                            <div class="card-tags">
-                                <a class="tag" href="#">Development</a>
-                            </div>
                             <h3 class="h4 card-title">
-                                <a href="#">Kampung Buricak Burinong Pakualam</a>
+                                <p>
+                                    {{ $item['title'] }}
+                                </p>
                             </h3>
                             <p>
-                                Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
+                                {{ $item['description'] }}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="mb-8 md:col-6">
-                    <div class="card">
-                        <img class="card-img" width="235" height="304" src="{{asset('images/wisata-alam-pasir-cinta.png')}}" alt="" />
-                        <div class="card-content">
-                            <div class="card-tags">
-                                <a class="tag" href="#">Development</a>
-                            </div>
-                            <h3 class="h4 card-title">
-                                <a href="#">Wisata Alam Pasir Cinta</a>
-                            </h3>
-                            <p>
-                                Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-8 md:col-6">
-                    <div class="card">
-                        <img class="card-img" width="235" height="304" src="{{asset('images/wisata-pemancingan-pasir-tugaran-karangpakuan.jpg')}}" alt="" />
-                        <div class="card-content">
-                            <div class="card-tags">
-                                <a class="tag" href="#">Development</a>
-                            </div>
-                            <h3 class="h4 card-title">
-                                <a href="#">Wisata Pemancingan
-                                    Pasir Tugaran
-                                    Karangpakuan
-                                </a>
-                            </h3>
-                            <p>
-                                Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
-    @endsection
+@endsection

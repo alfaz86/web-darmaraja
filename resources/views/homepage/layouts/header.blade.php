@@ -75,7 +75,7 @@
                 </span>
                 <ul class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
                     <li class="nav-dropdown-item">
-                        <a href="#" class="nav-dropdown-link">Komoditas Unggulan</a>
+                        <a href="/potensi-dan-wisata/komoditas-unggulan" class="nav-dropdown-link">Komoditas Unggulan</a>
                     </li>
                     <li class="nav-dropdown-item">
                         <a href="/potensi-dan-wisata/wisata" class="nav-dropdown-link">Wisata</a>
