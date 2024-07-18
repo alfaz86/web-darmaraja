@@ -60,6 +60,38 @@
                 margin-top: 4rem;
             }
         }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+        .pagination a {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            color: #1C85AE;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .pagination a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .pagination .active span {
+            padding: 8px 12px;
+            border-radius: 4px;
+            background-color: #1C85AE;
+            color: white;
+            border: 1px solid #1C85AE;
+        }
+
     </style>
 
     <!-- Swiper slider -->
@@ -72,4 +104,6 @@
 
     <!-- Main Stylesheet -->
     <link href="{{asset('pinwheel/styles/main.css')}}" rel="stylesheet" />
+
+    @yield('styles')
 </head>

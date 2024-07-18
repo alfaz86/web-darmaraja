@@ -42,7 +42,6 @@ Route::group(['prefix' => 'layanan-publik'], function () {
 
 // group potensi-dan-wisata
 Route::group(['prefix' => 'potensi-dan-wisata'], function () {
-    Route::get('/wisata', function () {
-        return view('homepage.potensi-dan-wisata.wisata');
-    })->name('potensi-dan-wisata.wisata');
+    Route::get('/komoditas-unggulan', [HomePageController::class, 'komoditasUnggulan'])->name('potensi-dan-wisata.komoditas-unggulan');
+    Route::get('/wisata', [HomePageController::class, 'wisata'])->name('potensi-dan-wisata.wisata');
 });

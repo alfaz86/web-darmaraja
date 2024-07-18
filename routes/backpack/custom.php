@@ -17,5 +17,7 @@ Route::group([
     'namespace' => 'App\Http\Controllers\Admin',
 ], function () {
     Route::crud('user', 'UserCrudController');
-    Route::crud('subdistrict-profiles', 'SubdistrictProfileCrudController');
+    Route::crud('subdistrict-profile', 'SubdistrictProfileCrudController');
+    Route::crud('tour', 'TourCrudController');
+    Route::crud('superior-comodity', 'SuperiorCommodityCrudController');
 });

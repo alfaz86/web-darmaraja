@@ -67,7 +67,7 @@ class SubdistrictProfileCrudController extends CrudController
     public function setup()
     {
         CRUD::setModel(SubdistrictProfile::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/subdistrict-profiles');
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/subdistrict-profile');
         CRUD::setEntityNameStrings('profil kecamatan', 'profil kecamatan');
     }
 
