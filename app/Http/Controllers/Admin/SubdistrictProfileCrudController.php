@@ -69,6 +69,10 @@ class SubdistrictProfileCrudController extends CrudController
         CRUD::setModel(SubdistrictProfile::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/subdistrict-profile');
         CRUD::setEntityNameStrings('profil kecamatan', 'profil kecamatan');
+        if (backpack_user()->role === 'user') {
+            CRUD::denyAccess('update');
+            CRUD::denyAccess('delete');
+        }
     }
 
     protected function setupListOperation()

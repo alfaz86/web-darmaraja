@@ -20,4 +20,6 @@ Route::group([
     Route::crud('subdistrict-profile', 'SubdistrictProfileCrudController');
     Route::crud('tour', 'TourCrudController');
     Route::crud('superior-comodity', 'SuperiorCommodityCrudController');
+    Route::crud('public-service', 'PublicServiceCrudController');
+    Route::crud('public-complaint', 'PublicComplaintCrudController');
 });
