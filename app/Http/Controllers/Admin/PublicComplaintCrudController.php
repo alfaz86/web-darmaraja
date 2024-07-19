@@ -45,8 +45,10 @@ class PublicComplaintCrudController extends CrudController
         CRUD::setModel(PublicComplaint::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/public-complaint');
         CRUD::setEntityNameStrings('pengaduan publik', 'pengaduan publik');
-        if (backpack_user()->role === 'user') {
-            CRUD::denyAccess('delete');
+        if (backpack_user()) {
+            if (backpack_user()->role === 'user') {
+                CRUD::denyAccess('delete');
+            }
         }
     }
 
