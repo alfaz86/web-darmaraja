@@ -44,6 +44,10 @@ class TourCrudController extends CrudController
         CRUD::setModel(\App\Models\Tour::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/tour');
         CRUD::setEntityNameStrings('wisata', 'wisata');
+        if (backpack_user()->role === 'user') {
+            CRUD::denyAccess('update');
+            CRUD::denyAccess('delete');
+        }
     }
 
     protected function setupListOperation()

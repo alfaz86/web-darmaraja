@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PublicService;
 use App\Models\SubdistrictProfile;
 use App\Models\SuperiorCommodity;
 use App\Models\Tour;
@@ -80,4 +81,14 @@ class HomePageController extends Controller
         return view('homepage.potensi-dan-wisata.komoditas-unggulan', compact('data'));
     }
 
+    public function produkLayanan(Request $request)
+    {
+        $data = PublicService::all();
+        return view('homepage.layanan-publik.produk-layanan', compact('data'));
+    }
+
+    public function pengaduanPublik(Request $request)
+    {
+        return view('homepage.layanan-publik.pengaduan-publik');
+    }
 }

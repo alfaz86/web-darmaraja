@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\SuperiorCommodityRequest;
+use App\Http\Requests\PublicServiceRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Backpack\CRUD\app\Library\Widget;
 
-class SuperiorCommodityCrudController extends CrudController
+class PublicServiceCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -18,33 +19,23 @@ class SuperiorCommodityCrudController extends CrudController
     {
         return [
             [
-                'label' => 'Lokasi',
+                'label' => 'Judul',
                 'type' => 'text',
-                'name' => 'location',
+                'name' => 'title',
             ],
             [
-                'label' => 'Pemilik',
-                'type' => 'text',
-                'name' => 'owner',
-            ],
-            [
-                'label' => 'Kerajinan',
-                'type' => 'text',
-                'name' => 'craft',
-            ],
-            [
-                'label' => 'Olah Pangan',
-                'type' => 'text',
-                'name' => 'food_processing',
-            ],
+                'label' => 'Konten',
+                'type' => 'textarea',
+                'name' => 'content',
+            ]
         ];
     }
 
     public function setup()
     {
-        CRUD::setModel(\App\Models\SuperiorCommodity::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/superior-comodity');
-        CRUD::setEntityNameStrings('komoditas unggulan', 'komoditas unggulan');
+        CRUD::setModel(\App\Models\PublicService::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/public-service');
+        CRUD::setEntityNameStrings('produk layanan', 'produk layanan');
         if (backpack_user()->role === 'user') {
             CRUD::denyAccess('update');
             CRUD::denyAccess('delete');
@@ -58,8 +49,10 @@ class SuperiorCommodityCrudController extends CrudController
 
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(SuperiorCommodityRequest::class);
+        CRUD::setValidation(PublicServiceRequest::class);
         CRUD::addFields($this->getAttibutes());
+
+        Widget::add()->type('script')->content('js/ckeditor.js');
     }
 
     protected function setupUpdateOperation()

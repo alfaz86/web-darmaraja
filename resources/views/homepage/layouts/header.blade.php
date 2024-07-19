@@ -59,10 +59,10 @@
                 </span>
                 <ul class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
                     <li class="nav-dropdown-item">
-                        <a href="#" class="nav-dropdown-link">Produk Layanan</a>
+                        <a href="/layanan-publik/produk-layanan" class="nav-dropdown-link">Produk Layanan</a>
                     </li>
                     <li class="nav-dropdown-item">
-                        <a href="#" class="nav-dropdown-link">Pengaduan Publik</a>
+                        <a href="/layanan-publik/pengaduan-publik" class="nav-dropdown-link">Pengaduan Publik</a>
                     </li>
                 </ul>
             </li>
@@ -106,3 +106,9 @@
         </div>
     </nav>
 </header>
+@if (!Route::is('homepage.index'))
+    
+<img class="floating-bubble-1 absolute right-0 top-0 -z-[1]" src="{{ asset('pinwheel/images/floating-bubble-1.svg') }}" alt="">
+<img class="floating-bubble-2 absolute left-0 top-[387px] -z-[1]" src="{{ asset('pinwheel/images/floating-bubble-2.svg') }}" alt="">
+<img class="floating-bubble-3 absolute right-0 top-[605px] -z-[1]" src="{{ asset('pinwheel/images/floating-bubble-3.svg') }}" alt="">
+@endif

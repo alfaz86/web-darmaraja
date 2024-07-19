@@ -1,6 +1,6 @@
 @extends('homepage.layouts.app')
 
-@section('title', 'Wisata')
+@section('title', 'Komoditas Unggulan')
 
 @section('styles')
     <style>

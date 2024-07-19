@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PublicComplaintCrudController;
 use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +38,9 @@ Route::group(['prefix' => 'profil-kecamatan'], function () {
 
 // group layanan-publik
 Route::group(['prefix' => 'layanan-publik'], function () {
-    
+    Route::get('produk-layanan', [HomePageController::class, 'produkLayanan'])->name('layanan-publik.produk-layanan');
+    Route::get('pengaduan-publik', [HomePageController::class, 'pengaduanPublik'])->name('layanan-publik.pengaduan-publik');
+    Route::post('pengaduan-publik', [PublicComplaintCrudController::class, 'store'])->name('layanan-publik.pengaduan-publik');
 });
 
 // group potensi-dan-wisata
