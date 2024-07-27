@@ -3,11 +3,13 @@
 @section('title', 'Komoditas Unggulan')
 
 @section('styles')
-    <style>
-        th, td {
-            padding: 0.5rem;
-        }
-    </style>
+<style>
+    th,
+    td {
+        padding: 0.5rem;
+    }
+
+</style>
 @endsection
 
 @section('content')
@@ -48,18 +50,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                    $no = $data->firstItem(); 
+                    @endphp
                     @foreach ($data as $location => $items)
-                        @foreach ($items as $index => $item)
-                            <tr>
-                                @if ($index === 0)
-                                    <td rowspan="{{ count($items) }}" class="text-center border border-gray-200">{{ $loop->parent->iteration }}</td>
-                                    <td rowspan="{{ count($items) }}" class="text-center border border-gray-200">{{ $location }}</td>
-                                @endif
-                                <td class="text-center border border-gray-200">{{ $item->owner }}</td>
-                                <td class="text-center border border-gray-200">{{ $item->craft }}</td>
-                                <td class="text-center border border-gray-200">{{ $item->food_processing }}</td>
-                            </tr>
-                        @endforeach
+                    @foreach ($items as $index => $item)
+                    <tr>
+                        @if ($index === 0)
+                        <td rowspan="{{ count($items) }}" class="text-center border border-gray-200">{{ $no++ }}</td>
+                        <td rowspan="{{ count($items) }}" class="text-center border border-gray-200">{{ $location }}</td>
+                        @endif
+                        <td class="text-center border border-gray-200">{{ $item->owner }}</td>
+                        <td class="text-center border border-gray-200">{{ $item->craft }}</td>
+                        <td class="text-center border border-gray-200">{{ $item->food_processing }}</td>
+                    </tr>
+                    @endforeach
                     @endforeach
                 </tbody>
             </table>
@@ -69,4 +74,4 @@
         </div>
         <div style="margin-top: 100px"></div>
     </div>
-@endsection
+    @endsection
