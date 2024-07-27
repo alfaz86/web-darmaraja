@@ -25,7 +25,9 @@ class TourRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'tour_image' => 'required|image|max:10240',
+            'title' => 'required',
+            'description' => 'required',
         ];
     }
 

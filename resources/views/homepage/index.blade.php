@@ -2,6 +2,19 @@
 
 @section('title', 'Website Kec Darmaraja')
 
+@section('styles')
+    <style>
+        .view-more {
+            margin-left: 0.5rem;
+            text-decoration: underline;
+        }
+
+        .view-more:hover {
+            color: rgb(161, 161, 225);
+        }
+    </style>
+@endsection
+
 @section('content')
 <section class="section banner relative flex items-center justify-center" >
     <div class="container">
@@ -10,9 +23,6 @@
                 <h1 class="banner-title">
                     Selamat Datang di Website Kami
                 </h1>
-                <p class="my-6">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum sapiente doloribus excepturi doloremque quis eum recusandae facilis explicabo, ducimus quaerat, aliquam, id impedit sit quasi aspernatur aut quia. Officia, a hic et ullam quae eum, optio libero sint maxime placeat magni, enim inventore quod voluptatem eaque deleniti exercitationem unde! Cupiditate.
-                </p>
             </div>
             <div class="lg:col-6">
                 <img class="w-full object-contain rounded-lg shadow-lg" src="images/homepage-background.jpeg" alt="" />
@@ -74,47 +84,58 @@
             <div class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
                 <div>
                     <h3 class="h4 text-xl lg:text-2xl">Produk Kantor Layanan Kami!</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    <p>Kami menyediakan produk dan layanan berkualitas untuk memenuhi kebutuhan Anda dengan solusi terbaik dan profesional.</p>
                 </div>
-                <span class="icon mt-4">
-                    <img class="objec-contain" src="pinwheel/images/icons/feature-icon-1.svg" alt="" />
-                </span>
+                <div class="flex item-center">
+                    <span class="icon mt-4">
+                        <img class="objec-contain" src="pinwheel/images/icons/feature-icon-6.svg" alt="" />
+                    </span>
+                    <span class="mt-4 view-more">
+                        <a href="/layanan-publik/produk-layanan">Lihat selengkapnya</a>
+                    </span>
+                </div>
             </div>
             <div class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
                 <div>
                     <h3 class="h4 text-xl lg:text-2xl">Pengaduan Publik</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    <p>Sampaikan keluhan dan masukan Anda untuk pelayanan yang lebih baik.</p>
                 </div>
-                <span class="icon mt-4">
-                    <img class="objec-contain" src="pinwheel/images/icons/feature-icon-2.svg" alt="" />
-                </span>
+                <div class="flex items-center">
+                    <span class="icon mt-4">
+                        <img class="object-contain" src="pinwheel/images/icons/feature-icon-6.svg" alt="" />
+                    </span>
+                    <span class="mt-4 view-more">
+                        <a href="/layanan-publik/pengaduan-publik">Lihat selengkapnya</a>
+                    </span>
+                </div>
             </div>
             <div class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
                 <div>
                     <h3 class="h4 text-xl lg:text-2xl">Komoditas Unggulan</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    <p>Temukan produk-produk unggulan yang menjadi andalan daerah kami.</p>
                 </div>
-                <span class="icon mt-4">
-                    <img class="objec-contain" src="pinwheel/images/icons/feature-icon-3.svg" alt="" />
-                </span>
+                <div class="flex items-center">
+                    <span class="icon mt-4">
+                        <img class="object-contain" src="pinwheel/images/icons/feature-icon-6.svg" alt="" />
+                    </span>
+                    <span class="mt-4 view-more">
+                        <a href="/potensi-dan-wisata/komoditas-unggulan">Lihat selengkapnya</a>
+                    </span>
+                </div>
             </div>
             <div class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
                 <div>
                     <h3 class="h4 text-xl lg:text-2xl">Wisata</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    <p>Jelajahi destinasi wisata menarik dan alami di daerah kami.</p>
                 </div>
-                <span class="icon mt-4">
-                    <img class="objec-contain" src="pinwheel/images/icons/feature-icon-4.svg" alt="" />
-                </span>
-            </div>
-            <div class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-                <div>
-                    <h3 class="h4 text-xl lg:text-2xl">Agenda</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <div class="flex items-center">
+                    <span class="icon mt-4">
+                        <img class="object-contain" src="pinwheel/images/icons/feature-icon-6.svg" alt="" />
+                    </span>
+                    <span class="mt-4 view-more">
+                        <a href="/potensi-dan-wisata/wisata">Lihat selengkapnya</a>
+                    </span>
                 </div>
-                <span class="icon mt-4">
-                    <img class="objec-contain" src="pinwheel/images/icons/feature-icon-4.svg" alt="" />
-                </span>
             </div>
         </div>
     </div>

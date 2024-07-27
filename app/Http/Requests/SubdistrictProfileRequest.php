@@ -25,7 +25,11 @@ class SubdistrictProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required',
+            'thumbnail_image' => 'required|image|max:10240',
+            'content' => 'required',
+            'menu' => 'required|max:255',
+            'status' => 'required|in:1,0',
         ];
     }
 
