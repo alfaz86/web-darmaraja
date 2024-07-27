@@ -9,13 +9,13 @@ function resetPasswordView() {
 }
 
 if (loginView()) {
-    var src = root + '/assets/images/logo-insun-medal.png';
+    var src = root + '/images/logo-kec-darmaraja.png';
     var icon = `<div class="text-center mb-3">
-        <img src="${src}" id="icon" alt="logo-insun-medal" width="100">
+        <img src="${src}" id="icon" alt="logo-insun-medal" width="120">
     </div>`;
-    var html = '<a href="' + root + '">back to home</a>';
+    var html = '<a href="' + root + '">kembali ke beranda</a>';
 
-    // $(icon).insertBefore("form");
+    $(icon).insertBefore("form");
     // $("footer").hide();
     var bottomContent = $("div.text-center > a");
     $(bottomContent[0]).hide();

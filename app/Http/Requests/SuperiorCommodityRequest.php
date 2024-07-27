@@ -25,7 +25,10 @@ class SuperiorCommodityRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'location' => 'required',
+            'owner' => 'required',
+            'craft' => 'nullable',
+            'food' => 'nullable',
         ];
     }
 

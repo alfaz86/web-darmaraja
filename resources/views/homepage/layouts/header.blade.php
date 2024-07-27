@@ -82,9 +82,6 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Agenda</a>
-            </li>
             <li class="nav-item mt-3.5 lg:hidden btn-login">
                 <a class="btn btn-white btn-sm border-border" href="{{ backpack_url('/login') }}">
                     @if (backpack_user())
